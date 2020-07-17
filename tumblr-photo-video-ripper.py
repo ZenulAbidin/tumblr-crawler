@@ -74,6 +74,7 @@ class DownloadWorker(Thread):
             medium_url = self._handle_medium_url(medium_type, post)
             if medium_url is not None:
                 self._download(medium_type, medium_url, target_folder)
+                self._download(medium_type, medium_url.replace('.mp4', ''), target_folder)
         except TypeError:
             pass
 
